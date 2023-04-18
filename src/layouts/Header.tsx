@@ -33,11 +33,11 @@ function Header({ handleShowMenu, handleShowLogin }: { handleShowMenu: () => voi
                             </ul>
                         </nav>
                     </div>
-                    <div className="site-logo  flex flex-col justify-center text-center px-[15px] absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
-                        <Link to="/" className="max-h-[40px] max-w-full lg:max-h-[95px] lg:max-w-[196px]">
-                            <img className="max-w-full max-h-full" alt="Basel Shopify Theme 2" src="https://cdn.shopify.com/s/files/1/0102/4383/3952/files/logo-basel.svg?v=11944076954395008056" />
-                        </Link>
-                    </div>
+                    {/* <div className="site-logo  flex flex-col justify-center text-center px-[15px] absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2"> */}
+                    <Link to="/" className="site-logo flex items-center object-contain text-center absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 max-w-[200px] max-h-[60px] lg:max-h-[95px] lg:max-w-[196px]">
+                        <img className="w-full h-full" alt="Basel Shopify Theme 2" src="https://cdn.shopify.com/s/files/1/0102/4383/3952/files/logo-basel.svg?v=11944076954395008056" />
+                    </Link>
+                    {/* </div> */}
                     <div className="right flex">
                         <div className="flex items-center relative">
                             <div className="login" onClick={handleShowLogin}>

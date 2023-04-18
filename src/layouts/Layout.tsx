@@ -2,7 +2,7 @@ import { Outlet } from "react-router-dom";
 import Header from "./Header";
 import MenuNav from "components/MenuNav";
 import { useEffect, useRef, useState } from "react";
-import SignIn from "components/SignIn";
+import { Register } from "modules/auth";
 
 function Layout() {
     const [showMenu, setShowMenu] = useState<boolean>(false)
@@ -13,7 +13,7 @@ function Layout() {
     useEffect(() => {
         let handler = (e: any) => {
             if (!menuRef.current.contains(e.target)) setShowMenu(false)
-            if (!document.getElementById("signIn")?.contains(e.target)) setShowLogin(false)
+            if (!document.getElementById("Register")?.contains(e.target)) setShowLogin(false)
         }
         document.addEventListener("mousedown", handler)
         return () => document.removeEventListener("mousedown", handler)
@@ -21,7 +21,7 @@ function Layout() {
     const handleShowMenu = () => setShowMenu(!showLogin)
     return (
         <div className="website-wrapper w-screen h-screen overflow-x-hidden relative">
-            <SignIn showLogin={showLogin} setShowLogin={setShowLogin} />
+            <Register showLogin={showLogin} setShowLogin={setShowLogin} />
             <MenuNav showMenu={showMenu} menuRef={menuRef} />
             <Header handleShowMenu={handleShowMenu} handleShowLogin={handleShowLogin} />
             <Outlet />
