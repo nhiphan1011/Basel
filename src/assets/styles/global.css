@@ -14,16 +14,21 @@ textarea:focus {
 
 .slick-next {
     right: 0;
-    z-index: 999;
+    z-index: 9999;
 }
 
 .slick-prev {
     left: 0;
-    z-index: 999
+    z-index: 9999
 }
 
-.slick-prev::before {
+.slick-arrow {
+    width: 36px;
+    height: 36px;
+}
 
+.slick-prev::before,
+.slick-next::before {
     width: 55px;
     font-size: 36px;
     height: 55px;

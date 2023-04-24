@@ -1,10 +1,10 @@
 import { Outlet } from "react-router-dom";
-import Header from "./Header";
-import MenuNav from "components/MenuNav";
 import { useEffect, useRef, useState } from "react";
-import { Register } from "modules/auth";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPhoneSquare } from "@fortawesome/free-solid-svg-icons";
+import { Register } from "modules/auth";
+import Header from "./Header";
+import MenuNav from "./MenuNav";
 
 function Layout() {
     const [showMenu, setShowMenu] = useState<boolean>(false)

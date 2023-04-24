@@ -1,5 +1,5 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import { Layout } from 'layouts';
+import { Layout } from 'components/layouts';
 import { PublicRoutes } from './routes';
 
 function App() {
