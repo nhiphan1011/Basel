@@ -44,22 +44,24 @@ function Header({ handleShowMenu, handleShowLogin }: { handleShowMenu: () => voi
                                 <div className="mobile lg:hidden w-[30px] h-[30px] flex justify-center items-center ml-[10px]">
                                     <FontAwesomeIcon className="" icon={faUser} />
                                 </div>
-                                <button className="hidden lg:h-[95px] lg:flex lg:items-center mr-[15px] pr-[35px] border-r-[#f5f5f5] border-r-[2px] text-[13px] italic" >Login / Register</button>
+                                <button className=" hidden lg:flex lg:items-center mr-[15px] pr-[35px] border-r-[#f5f5f5] border-r-[2px] text-[13px] italic " >
+                                    <span className="relative over after:h-[1px] after:absolute after:bg-[#919191] after:bottom-0 after:right-0 after:opacity-0 after:w-0 after:transition-all after:duration-200 after:ease-linear hover:after:w-full hover:after:left-0 hover:after:opacity-100">Login / Register</span>
+                                </button>
                             </div>
 
                             <div className="button flex">
                                 <div className="hidden lg:flex">
-                                    <div className="w-[30px] h-[30px] flex justify-center items-center ml-[10px]">
+                                    <button className="w-[30px] h-[30px] flex justify-center items-center ml-[10px]">
                                         <FontAwesomeIcon className="lead-[30px] text-[20px]" icon={faMagnifyingGlass} />
-                                    </div>
-                                    <div className="w-[30px] h-[30px] flex justify-center items-center ml-[10px]">
+                                    </button>
+                                    <button className="w-[30px] h-[30px] flex justify-center items-center ml-[10px]">
                                         <FontAwesomeIcon className="lead-[30px] text-[20px]" icon={faHeart} />
-                                    </div>
+                                    </button>
                                 </div>
                                 <div className="cart text-[13px] flex justify-center items-center ml-[10px]">
-                                    <span className="w-[30px] h-[30px] flex items-center">
+                                    <button className="w-[30px] h-[30px] flex items-center">
                                         <FontAwesomeIcon className="" icon={faCartShopping} />
-                                    </span>
+                                    </button>
                                     <span className="hidden lg:block">
                                         <span className="cartCount">0</span>
                                         <span className="subtotal-divider">/</span>

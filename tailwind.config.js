@@ -7,4 +7,5 @@ module.exports = {
     },
     // plugin cài thêm một số công cụ hỗ trợ thêm
     plugins: [],
+    important: true,
 }

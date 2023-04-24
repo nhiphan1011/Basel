@@ -3,6 +3,8 @@ import Header from "./Header";
 import MenuNav from "components/MenuNav";
 import { useEffect, useRef, useState } from "react";
 import { Register } from "modules/auth";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faPhoneSquare } from "@fortawesome/free-solid-svg-icons";
 
 function Layout() {
     const [showMenu, setShowMenu] = useState<boolean>(false)
@@ -21,6 +23,17 @@ function Layout() {
     const handleShowMenu = () => setShowMenu(!showLogin)
     return (
         <div className="website-wrapper w-screen h-screen overflow-x-hidden relative">
+            <div className="top-bar  bg-[#1aada3] text-[rgba(255,255,255,.8)] tracking-[0.3px] text-[13px]">
+                <div className="w-[95%] h-[42px] flex justify-center lg:justify-between items-center px-[15px] mx-auto">
+                    <div className="left">
+                        <span><FontAwesomeIcon icon={faPhoneSquare} /></span>
+                        OUR PHONE NUMBER:
+                        <span>+77 (756) 334 876</span>
+                    </div>
+                    <div className="menu hidden lg:flex"></div>
+                </div>
+
+            </div>
             <Register showLogin={showLogin} setShowLogin={setShowLogin} />
             <MenuNav showMenu={showMenu} menuRef={menuRef} />
             <Header handleShowMenu={handleShowMenu} handleShowLogin={handleShowLogin} />
