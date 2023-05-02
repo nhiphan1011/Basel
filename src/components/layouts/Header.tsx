@@ -1,21 +1,21 @@
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faAngleDown, faBars, faCartShopping, faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
+import { faHeart as heart, faAngleDown, faBars, faCartShopping, faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
 import { faHeart, faUser } from '@fortawesome/free-regular-svg-icons';
 const array = ["home", "shop", "blog", "pages", "features"]
 const URL = "https://new-basel2.myshopify.com/"
 function Header({ handleShowMenu, handleShowLogin }: { handleShowMenu: () => void, handleShowLogin: () => void }) {
     return (
-        <header className="main-header m-auto">
-            <div className="header-container w-full md:w-[95%] md:mx-auto px-[15px] ">
-                <div className="wrap-header w-full min-h-[60px] relative flex justify-between items-center">
+        <header className="main-header sticky top-0 z-50 m-auto bg-white">
+            <div className="container w-full md:w-[95%] mx-auto">
+                <div className="wrap-header w-full min-h-[60px] lg:min-h-[95px] relative flex justify-between items-center">
                     <div className="left">
-                        <button className="mobile w-[30px] lg:hidden my-auto"
+                        <button className="mobile flex w-[30px] mxl:hidden my-auto"
                             onClick={handleShowMenu}
                         >
                             <FontAwesomeIcon className="w-[18px] h-[18px]" icon={faBars} />
                         </button>
-                        <nav className="hidden lg:block menu-left">
+                        <nav className="menu-left hidden mxl:block ">
                             <ul className="menu flex -mx-[8px]">
                                 {array.map((item, index) => {
                                     return (
@@ -38,34 +38,35 @@ function Header({ handleShowMenu, handleShowLogin }: { handleShowMenu: () => voi
                         <img className="w-full h-full" alt="Basel Shopify Theme 2" src="https://cdn.shopify.com/s/files/1/0102/4383/3952/files/logo-basel.svg?v=11944076954395008056" />
                     </Link>
                     {/* </div> */}
-                    <div className="right flex">
+                    <div className="right h-full flex">
                         <div className="flex items-center relative">
                             <div className="login" onClick={handleShowLogin}>
-                                <div className="mobile lg:hidden w-[30px] h-[30px] flex justify-center items-center ml-[10px]">
-                                    <FontAwesomeIcon className="" icon={faUser} />
-                                </div>
-                                <button className=" hidden lg:flex lg:items-center mr-[15px] pr-[35px] border-r-[#f5f5f5] border-r-[2px] text-[13px] italic " >
-                                    <span className="relative over after:h-[1px] after:absolute after:bg-[#919191] after:bottom-0 after:right-0 after:opacity-0 after:w-0 after:transition-all after:duration-200 after:ease-linear hover:after:w-full hover:after:left-0 hover:after:opacity-100">Login / Register</span>
-                                </button>
+                                <Link to="" className="mobile lg:hidden w-[30px] h-[30px] flex justify-end items-center ml-[10px]">
+                                    <FontAwesomeIcon className="lead-[30px] text-[20px]" icon={faUser} />
+                                </Link>
+                                <Link to="" className="hidden lg:h-[95px] lg:flex lg:justify-end lg:items-center mr-[15px] pr-[35px] border-r-[#f5f5f5] border-r-[2px] text-[13px] italic " >
+                                    <span className="line after:bg-[#919191] ">Login / Register</span>
+                                </Link>
                             </div>
 
                             <div className="button flex">
                                 <div className="hidden lg:flex">
-                                    <button className="w-[30px] h-[30px] flex justify-center items-center ml-[10px]">
+                                    <Link to="" className="w-[30px] h-[30px] flex justify-center items-center ml-[10px]">
                                         <FontAwesomeIcon className="lead-[30px] text-[20px]" icon={faMagnifyingGlass} />
-                                    </button>
-                                    <button className="w-[30px] h-[30px] flex justify-center items-center ml-[10px]">
-                                        <FontAwesomeIcon className="lead-[30px] text-[20px]" icon={faHeart} />
-                                    </button>
+                                    </Link>
+                                    <Link to="" className="relative w-[30px] h-[30px] flex justify-center items-center ml-[10px]">
+                                        <FontAwesomeIcon className="lead-[30px] text-[20px] absolute top-1/2 -translate-y-1/2" icon={faHeart} />
+                                        <FontAwesomeIcon className="lead-[30px] text-[20px] duration-300 opacity-0 hover:opacity-100" icon={heart} />
+                                    </Link>
                                 </div>
-                                <div className="cart text-[13px] flex justify-center items-center ml-[10px]">
-                                    <button className="w-[30px] h-[30px] flex items-center">
-                                        <FontAwesomeIcon className="" icon={faCartShopping} />
+                                <div className="cart text-[13px] ml-[10px] flex">
+                                    <button className="w-[30px] h-[30px] flex justify-end items-center">
+                                        <FontAwesomeIcon className="lead-[30px] text-[20px]" icon={faCartShopping} />
                                     </button>
-                                    <span className="hidden lg:block">
-                                        <span className="cartCount">0</span>
-                                        <span className="subtotal-divider">/</span>
-                                        <span className="money font-bold">$0.00</span>
+                                    <span className="hidden mxl:flex items-center">
+                                        <span className="cartCount pl-1">0</span>
+                                        <span className="subtotal-divider pl-1">/</span>
+                                        <span className="money font-bold pl-1">$0.00</span>
                                     </span>
                                 </div>
                             </div>

@@ -12,6 +12,11 @@ textarea:focus {
     outline: none;
 }
 
+/* @font-face {
+    font-family: ;
+    src: url();
+} */
+
 .slick-next {
     right: 0;
     z-index: 9999;
@@ -34,4 +39,32 @@ textarea:focus {
     height: 55px;
     line-height: 55px;
     color: #fff;
+}
+
+.testimonial .slick-dots li button::before {
+    font-size: 10px;
+}
+
+.testimonial .slick-dots li {
+    margin: 0;
+}
+
+.line {
+    position: relative;
+}
+
+.line::after {
+    position: absolute;
+    height: 1px;
+    width: 0;
+    bottom: 0;
+    right: 0;
+    opacity: 0;
+    transition: ease-in-out all 200ms
+}
+
+.line:hover::after {
+    width: 100%;
+    left: 0;
+    opacity: 1;
 }
