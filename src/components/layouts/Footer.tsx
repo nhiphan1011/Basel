@@ -36,7 +36,7 @@ function Footer() {
                             <div key={index} className={`footer ${index} mb-[30px]`}>
                                 <h5 className="relative text-white pb-[4px] font-bold mb-[25px] before:w-[30px] before:h-[2px] before:bg-[rgba(255,255,255,.8)] before:absolute before:bottom-0">{menu.title}</h5>
                                 {menu.menu.map((item, i) => (
-                                    <p className="mb-[15px]"><Link className="text-footerText" key={i} to="">{item}</Link></p>
+                                    <p key={i} className="mb-[15px]"><Link className="text-footerText" to="">{item}</Link></p>
                                 ))}
                             </div>
                         ))}
