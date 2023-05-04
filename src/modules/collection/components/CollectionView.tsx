@@ -24,25 +24,7 @@ function Items({ currentItems }: { currentItems: Array<any> }) {
         </div>
     );
 }
-function CollectionView({ data }: { data: any }) {
-    const itemsPerPage = 12
-    const [currentItems, setCurrentItems] = useState<Array<any>>([]);
-    const [pageCount, setPageCount] = useState<number>(0)
-    const [startIndex, setStartIndex] = useState<number>(0);
-
-    const handlePageClick = (event: any) => {
-        const newStartIndex = event.selected * itemsPerPage
-        setStartIndex(newStartIndex)
-    };
-    useEffect(() => {
-        const endIndex = startIndex + itemsPerPage;
-        if (data) {
-            setCurrentItems(data.slice(startIndex, endIndex));
-            setPageCount(Math.ceil(data.length / itemsPerPage));
-
-        }
-    }, [startIndex, itemsPerPage, data]);
-
+function CollectionView({ currentItems, pageCount, handlePageClick }: { currentItems: Array<any>, pageCount: number, handlePageClick: (event: any) => void }) {
     return (
         <div className="collections">
             <div className=" nav-shop bg-black">
