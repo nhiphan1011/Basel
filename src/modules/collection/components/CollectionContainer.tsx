@@ -1,33 +1,23 @@
-import axios from "axios";
-import CollectionView from "./CollectionView";
+import { useDispatch, useSelector } from "react-redux";
 import { useEffect, useState } from "react";
-
+import { getProductList } from "modules/collection";
+import CollectionView from "./CollectionView";
 
 function CollectionContainer() {
     const limit = 12
-    const [currentItems, setCurrentItems] = useState<Array<any>>([]);
+    const dispatch = useDispatch()
+    const { products, total } = useSelector((state: any) => state.product.list)
     const [offSet, setOffSet] = useState<number>(0);
     const [pageCount, setPageCount] = useState<number>(0);
+    useEffect(() => {
+        dispatch(getProductList({ offset: offSet, limit }))
+        if (products.length > 0) setPageCount(total % limit)
+    }, [offSet])
 
     const handlePageClick = (event: any) => {
         const newStartIndex = event.selected * limit
         setOffSet(newStartIndex)
     };
-    const getData = async () => {
-        const result = await axios.get(`https://pokeapi.co/api/v2/pokemon?offset=${offSet}&limit=${limit}`)
-        // if (result) setData(result.data.results)
-        if (result) {
-            console.log(result)
-            setPageCount(result.data.count % limit)
-            setCurrentItems(result.data.results)
-        }
-
-    }
-    useEffect(() => {
-        getData()
-    }, [offSet]);
-
-    return <CollectionView currentItems={currentItems} pageCount={pageCount} handlePageClick={handlePageClick} />
+    return <CollectionView currentItems={products} pageCount={pageCount} handlePageClick={handlePageClick} />
 }
-
 export default CollectionContainer;

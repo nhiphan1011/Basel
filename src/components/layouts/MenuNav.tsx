@@ -1,7 +1,7 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAngleDown, faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
-const array = ["home", "shop", "blog", "pages", "features"]
+import { MENU_HEADER } from "constant";
 function MenuNav({ showMenu, menuRef }: { showMenu: any, menuRef: any }) {
     return (
         <section ref={menuRef} id="navMenu" className={`z-50 absolute menu-nav w-[270px] h-screen bg-[#0c0c0c] transition-transform duration-300 ${showMenu ? 'translate-x-0' : 'translate-x-[-270px]'}`}>
@@ -14,7 +14,7 @@ function MenuNav({ showMenu, menuRef }: { showMenu: any, menuRef: any }) {
             </form>
             <div className="menu-container">
                 <ul className="menu">
-                    {array.map((item, i) => (
+                    {MENU_HEADER.map((item, i) => (
                         <li key={i} className=" flex justify-between  border-b-[rgba(92,92,92,.23)] border-b-[1px]">
                             <Link className="leading-[26px] pl-[15px] py-[12px] text-[rgba(255,255,255,.8)] " to='/'>{item.toUpperCase()}</Link>
                             <div className="w-[49px] flex justify-center items-center border-l-[rgba(92,92,92,.23)] border-l-[1px]"><FontAwesomeIcon className="text-[#bbb]" icon={faAngleDown} /></div>

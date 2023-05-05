@@ -1,29 +1,10 @@
+import { Link } from "react-router-dom";
+import ReactPaginate from "react-paginate";
+import Items from "./Item";
+import { MENU_NAV } from "constant";
 import { faCaretLeft, faChevronLeft, faChevronRight } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { useEffect, useState } from "react";
-import ReactPaginate from "react-paginate";
-import { Link } from "react-router-dom";
-const nav = [
-    "all", "bags", "accessories", "jewellery", "man", "shoes", "watches", "woman", "other"
-]
-function Items({ currentItems }: { currentItems: Array<any> }) {
-    return (
-        <div className="products grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2 mb-[30px]">
-            {currentItems.map((item, i) => (
-                <div className="product text-center" key={i}>
-                    <div className="top relative">
-                        {/* <Link to="" className="top hover:opacity-0 duration-[400ms]"><img alt="" src={item.url[1]} /></Link> */}
-                        <Link to="" className="top hover:opacity-0 duration-[400ms]"><img alt="" src={item.url} /></Link>
-                        {/* <Link to="" className="top-behind absolute top-0 -z-10"><img alt="" src={item.url[0]} /></Link> */}
-                    </div>
-                    <div className="swatches"></div>
-                    <h3 className="title">{item.name}</h3>
-                    <p className="price">{item.name}</p>
-                </div>
-            ))}
-        </div>
-    );
-}
+
 function CollectionView({ currentItems, pageCount, handlePageClick }: { currentItems: Array<any>, pageCount: number, handlePageClick: (event: any) => void }) {
     return (
         <div className="collections">
@@ -42,7 +23,7 @@ function CollectionView({ currentItems, pageCount, handlePageClick }: { currentI
                         </span>
                     </Link>
                     <ul className="hidden lg:flex text-white -mx-2.5 justify-center">
-                        {nav.map((item, i) => (
+                        {MENU_NAV.map((item, i) => (
                             <li className="uppercase px-2.5 tracking-[1px] leading-[50px] " key={i}><Link className="" to={`collections/${item}`}>{item}</Link></li>
                         ))}
                     </ul>
@@ -51,7 +32,7 @@ function CollectionView({ currentItems, pageCount, handlePageClick }: { currentI
             </div>
             <div className="content container mb-10">
                 <div className="shop-head"></div>
-                <Items currentItems={currentItems} />
+                {currentItems?.length > 0 && <Items currentItems={currentItems} />}
                 <ReactPaginate
                     breakLabel="..."
                     nextLabel={<FontAwesomeIcon icon={faChevronRight} />}
@@ -60,16 +41,16 @@ function CollectionView({ currentItems, pageCount, handlePageClick }: { currentI
                     onPageChange={handlePageClick}
                     pageRangeDisplayed={5}
                     marginPagesDisplayed={1}
-                    pageClassName="page-item w-[34px] leading-[32px] mr-[3px] border-[1px] border-white border-b-[#b1b1b1] hover:border-[#b1b1b1]"
+                    pageClassName="page-item"
                     pageLinkClassName="page-link"
-                    previousClassName="page-previous w-[34px] flex justify-center items-center"
+                    previousClassName="page-arrow page-previous "
                     previousLinkClassName="page-previous-link"
-                    nextClassName="page-next w-[34px] flex justify-center items-center"
+                    nextClassName="page-arrow page-next "
                     nextLinkClassName="page-next-link"
-                    breakClassName="page-break w-[34px] leading-[32px] mr-[3px] border-[1px] border-b-[#b1b1b1] border-white"
-                    breakLinkClassName="page-break-link "
+                    breakClassName="page-item page-break"
+                    breakLinkClassName="page-link page-break-link "
                     containerClassName="container flex text-center justify-center text-[16px]"
-                    activeClassName="active text-white bg-black border-black border-b-black hover:border-black"
+                    activeClassName="active disabled"
                     disabledClassName="hidden"
                 />
                 <div className="footer"></div>

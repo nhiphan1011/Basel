@@ -2,25 +2,7 @@ import { faEnvelope, faLocationArrow, faMobileScreenButton } from "@fortawesome/
 import { faFacebookF, faTwitter } from '@fortawesome/free-brands-svg-icons'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Link } from "react-router-dom";
-
-const footer = [
-    {
-        title: "OUR STORIES",
-        menu: ["Ha Noi", "New York", "London SF", "Los Angeles", "Chicago", "Las Vegas"]
-    },
-    {
-        title: "INFORMATION",
-        menu: ["About Store", "New Collection", "Woman Dress", "Contact Us", "Latest News", "Our Sitemap"]
-    },
-    {
-        title: "USEFUL LINKS",
-        menu: ["Privacy Policy", "Returns", "Terms & Conditions", "Contact Us", "Latest News", "Our Sitemap"]
-    },
-    {
-        title: "FOOTER MENU",
-        menu: ["Instagram profile", "New Collection", "Woman Dress", "Contact Us", "Latest News", "Purchase Theme"]
-    },
-]
+import { FOOTER } from "constant";
 function Footer() {
     return (
         <footer className="footer bg-black pt-[50px] pb-[20px]">
@@ -32,7 +14,7 @@ function Footer() {
                 </div>
                 <div className="footer lg:flex">
                     <div className="grid md:grid-cols-2 lg:grid-cols-4 lg:w-4/5">
-                        {footer.map((menu, index) => (
+                        {FOOTER.map((menu, index) => (
                             <div key={index} className={`footer ${index} mb-[30px]`}>
                                 <h5 className="relative text-white pb-[4px] font-bold mb-[25px] before:w-[30px] before:h-[2px] before:bg-[rgba(255,255,255,.8)] before:absolute before:bottom-0">{menu.title}</h5>
                                 {menu.menu.map((item, i) => (

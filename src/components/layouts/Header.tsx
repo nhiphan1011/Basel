@@ -1,8 +1,9 @@
 import { Link } from "react-router-dom";
+import { MENU_HEADER } from "constant";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHeart as heart, faAngleDown, faBars, faCartShopping, faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
 import { faHeart, faUser } from '@fortawesome/free-regular-svg-icons';
-const array = ["home", "shop", "blog", "pages", "features"]
+
 const URL = "https://new-basel2.myshopify.com/"
 function Header({ handleShowMenu, handleShowLogin }: { handleShowMenu: () => void, handleShowLogin: () => void }) {
     return (
@@ -17,7 +18,7 @@ function Header({ handleShowMenu, handleShowLogin }: { handleShowMenu: () => voi
                         </button>
                         <nav className="menu-left hidden mxl:block ">
                             <ul className="menu flex -mx-[8px]">
-                                {array.map((item, index) => {
+                                {MENU_HEADER.map((item, index) => {
                                     return (
                                         <li className="px-[8px]"
                                             key={index}>
