@@ -7,7 +7,7 @@ import { faHeart, faUser } from '@fortawesome/free-regular-svg-icons';
 const URL = "https://new-basel2.myshopify.com/"
 function Header({ handleShowMenu, handleShowLogin }: { handleShowMenu: () => void, handleShowLogin: () => void }) {
     return (
-        <header className="main-header sticky top-0 z-50 m-auto bg-white">
+        <header className="main-header sticky top-0 z-[5] m-auto bg-white">
             <div className="container w-full md:w-[95%] mx-auto">
                 <div className="wrap-header w-full min-h-[60px] lg:min-h-[95px] relative flex justify-between items-center">
                     <div className="left">

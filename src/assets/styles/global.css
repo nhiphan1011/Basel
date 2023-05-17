@@ -19,12 +19,12 @@ textarea:focus {
 
 .slick-next {
     right: 0;
-    z-index: 9999;
+    z-index: 1;
 }
 
 .slick-prev {
     left: 0;
-    z-index: 9999
+    z-index: 1
 }
 
 .slick-arrow {

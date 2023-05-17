@@ -4,8 +4,30 @@ import Items from "./Item";
 import { MENU_NAV } from "constant";
 import { faCaretLeft, faChevronLeft, faChevronRight } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { IItem } from "../interface";
+interface ICollection {
+    currentItems: [{
+        brand: string,
+        category: string,
+        description: string,
+        discountPercentage: string,
+        id: number,
+        images: Array<string>,
+        price: number,
+        rating: number,
+        stock: number
+    }],
+    pageCount: number,
+    handlePageClick: (event: any) => void
+}
+// interface ICollection {
+//     currentItems: Array<IItem>,
+//     pageCount: number,
+//     handlePageClick: (event: any) => void
+// }
 
-function CollectionView({ currentItems, pageCount, handlePageClick }: { currentItems: Array<any>, pageCount: number, handlePageClick: (event: any) => void }) {
+function CollectionView({ currentItems, pageCount, handlePageClick }: any) {
+    // console.log(currentItems)
     return (
         <div className="collections">
             <div className=" nav-shop bg-black">

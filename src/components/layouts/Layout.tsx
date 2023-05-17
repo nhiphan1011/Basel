@@ -1,7 +1,7 @@
 import { Link, Outlet } from "react-router-dom";
 import { useEffect, useRef, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faPhoneSquare, faUserLarge } from "@fortawesome/free-solid-svg-icons";
+import { faChevronUp, faPhoneSquare, faUserLarge } from "@fortawesome/free-solid-svg-icons";
 import { Register } from "modules/auth";
 import Header from "./Header";
 import MenuNav from "./MenuNav";
@@ -24,6 +24,11 @@ function Layout() {
     const handleShowMenu = () => setShowMenu(!showLogin)
     return (
         <div className="website-wrapper w-full h-screen overflow-x-hidden relative">
+
+            <a href="#" className="scrollToTop hidden lg:block fixed right-[40px] bottom-[70px] w-[45px] h-[45px] border-black border rounded-full bg-white color-black hover:bg-mint hover:text-white hover:scale-90 hover:border-none duration-200 z-[9]">
+                <FontAwesomeIcon className="text-[18px] font-thin absolute top-1/2 right-1/2 translate-x-1/2 -translate-y-1/2" icon={faChevronUp} />
+            </a>
+
             <div className="top-bar bg-mint text-[rgba(255,255,255,.8)] tracking-[0.3px] text-[13px]">
                 <div className="w-[95%] h-[42px] flex justify-center lg:justify-between items-center px-[15px] mx-auto">
                     <div className="left">
@@ -45,7 +50,7 @@ function Layout() {
             <Header handleShowMenu={handleShowMenu} handleShowLogin={handleShowLogin} />
             <Outlet />
             <Footer />
-            <div className={`close-side transition-all duration-300 w-screen h-screen bg-[rgba(0,0,0,.7)] absolute top-0 ${showLogin || showMenu ? 'visible' : 'hidden'} `}></div>
+            <div className={`close-side transition-all duration-300 w-screen h-full bg-[rgba(0,0,0,.7)] absolute z-10 top-0 ${showLogin || showMenu ? 'visible' : 'hidden'} `}></div>
         </div>);
 }
 

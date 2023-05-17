@@ -21,7 +21,7 @@ function HomeView() {
                 >
                     {BANNER.map((item, i) => (
                         <div key={i} className={`slide relative h-[350px] sm:h-[592px] md:h-[512px] lg:h-[600px] bg-top bg-cover ${i === 0 ? "bg-[url('https://cdn.shopify.com/s/files/1/0102/4383/3952/files/highcompress-slider_1.jpg')]" : "bg-[url('https://cdn.shopify.com/s/files/1/0102/4383/3952/files/highcompress-slider_2.jpg')]"}`}>
-                            <div className={`absolute top-1/2 -translate-y-1/2 px-[15%] py-[6%] md:px-[10%] lg:px-[6%] flex flex-col ${i === 0 ? 'items-start' : 'items-end text-right'} w-full z-50`}>
+                            <div className={`absolute top-1/2 -translate-y-1/2 px-[15%] py-[6%] md:px-[10%] lg:px-[6%] flex flex-col ${i === 0 ? 'items-start' : 'items-end text-right'} w-full z-2`}>
                                 <h2 className="uppercase font-bold text-[40px] md:text-[80px] lg:text-[119px] leading-1 text-white mb-[20px]">{item.title}</h2>
                                 <h6 className="font-medium text-white text-[40px] md:text-[60px] lg:text-[73px] mb-[20px] leading-[1.3]">{item.subtitle}</h6>
                                 <button className="uppercase bg-mint text-white text-[10px] lead-[14px] sm:text-[14px] sm:lead-[18px] sm:tracking-[0.3px] py-[7px] sm:py-[10px] px-[14px] sm:px-[20px] hover:opacity-[0.8] hover:duration-[250]">shop now</button>
@@ -69,7 +69,7 @@ function HomeView() {
                 </div>
             </section>
             <section className="collection wrapper">
-                <div className="container  mt-[60px] ">
+                <div className="container mt-[60px] ">
                     <div className="title text-center mb-[18px]">
                         <p className="subtitle text-[16px] text-[#9b9b9b] mb-[10px]">MADE THE HARD WAY</p>
                         <h4 className="title text-[20px] mb-[12px]">FEATURED CATEGORIES</h4>
@@ -84,13 +84,13 @@ function HomeView() {
                     </div>
                     <div className="collection grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-[30px] gap-y-[40px] mb-[3.5%]">
                         {COLLECTIONS.map((product, index) => (
-                            <div className="product relative" key={index}>
+                            <div className="product relative overflow-hidden" key={index}>
                                 <Link to="" className="top hover:opacity-0 duration-[400ms]"><img alt="" src={product.url[0]} /></Link>
-                                <Link to="" className="top-behind absolute top-0 -z-10"><img alt="" src={product.url[1]} /></Link>
+                                <Link to="" className="top-behind absolute top-0 -z-2"><img alt="" src={product.url[1]} /></Link>
                                 <h3 className="title mb-[27px] text-[#1b1919]"><Link className="w-fit border-b-[1px] border-b-[rgba(0,0,0,.1)] line-clamp-2 " to="" >{product.title}</Link></h3>
                                 <div className="price">
                                     <p className="">{product.price}</p>
-                                    <button className="btn-add">Add to cart</button>
+                                    <button className="btn-add md:absolute">Add to cart</button>
                                 </div>
                             </div>
                         ))}
@@ -104,10 +104,10 @@ function HomeView() {
                     <p className="mb-[25px] text-[14px]">Hey you, sign up it only takes a second to be the first to find out about our latest news and promotionsâ ¦</p>
                 </div>
                 <form className=" max-w-[590px] flex flex-wrap justify-center text-[14px] leading-[18px] mx-auto">
-                    <p className="w-full relative max-w-[390px] bg-transparent ">
+                    <div className="w-full relative max-w-[390px] bg-transparent ">
                         <div className="absolute"><FontAwesomeIcon icon={faEnvelope} /></div>
                         <input type="email" placeholder="Your email address" className="w-full pl-[35px] pr-[10px] bg-[transparent] border-b-[2px] border-b-white lead-[18px] text-white" />
-                    </p>
+                    </div>
                     <button type="submit" className="bg-white text-[#5f5f5f]  px-[55px] py-[10px]" >SIGN UP</button>
                 </form>
             </section>

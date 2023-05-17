@@ -1,10 +1,11 @@
-import { Collections, Home } from "pages"
+import { Collection, Home, Product } from "pages"
 
 
 
 const PublicRoutes = [
     { path: '/', element: Home },
-    { path: '/collections', element: Collections },
+    { path: '/collections', element: Collection },
+    { path: '/products', element: Product },
     // { path: '/products/:id', element: {} },
 
 ]

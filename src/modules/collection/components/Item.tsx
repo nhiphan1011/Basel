@@ -1,4 +1,6 @@
 import { Link } from "react-router-dom";
+// import { IItem } from "modules/collection";
+// export default function Items({ items }: Array<IItem>) {
 export default function Items({ currentItems }: { currentItems: Array<any> }) {
     return (
         <div className="products grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2 mb-[30px]">

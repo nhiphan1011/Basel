@@ -21,7 +21,7 @@ function Register({ showLogin, setShowLogin }: { showLogin: any, setShowLogin: a
     const onSubmit = (data: any, e: any) => console.log(data, e);
     const onError = (error: any, e: any) => console.log(error, e);
     return (
-        <div id="Register" className={`absolute z-50 bg-[#fff] w-[300px] h-screen transition-all duration-300 ${showLogin ? 'right-0' : '-right-[300px]'}`}>
+        <div id="Register" className={` fixed z-20 bg-[#fff] w-[300px] h-full transition-all duration-300 top-0 ${showLogin ? 'right-0 ' : '-right-[300px]'}`}>
             <div className=" heading flex justify-between bg-[#000] text-[#fff] mb-[20px] px-[20px] py-[28px] ">
                 <h3 className="font-bold">SIGN IN</h3>
                 <button onClick={() => setShowLogin(false)} className="close text-[12px] tracking-[0.6px]">CLOSE
@@ -43,7 +43,7 @@ function Register({ showLogin, setShowLogin }: { showLogin: any, setShowLogin: a
                     </div>
                 </div>
                 <p className="mb-[10px]">Lost your password?</p>
-                <button className="w-full border-[#000] border-[2px] mt-[10px] mb-[20px] py-[10px] px-[20px]" type="submit" >LOGIN</button>
+                <button className="w-full border-[#000] border-[2px] mt-[10px] mb-[20px] py-[10px] px-[20px] hover:bg-black hover:text-white duration-[350ms] " type="submit" >LOGIN</button>
             </form>
             <div className="register-question m-[20px]">
             </div>

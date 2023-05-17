@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { MENU_HEADER } from "constant";
 function MenuNav({ showMenu, menuRef }: { showMenu: any, menuRef: any }) {
     return (
-        <section ref={menuRef} id="navMenu" className={`z-50 absolute menu-nav w-[270px] h-screen bg-[#0c0c0c] transition-transform duration-300 ${showMenu ? 'translate-x-0' : 'translate-x-[-270px]'}`}>
+        <section ref={menuRef} id="navMenu" className={`z-20 fixed top-0 menu-nav w-[270px] h-screen bg-[#0c0c0c] transition-transform duration-300 ${showMenu ? 'translate-x-0' : 'translate-x-[-270px]'}`}>
             <form className="search relative p-[10px] border-b-[2px] border-b-[rgba(92,92,92,.43)] ">
                 <input className="w-full h-[40px] bg-[rgba(255,255,255,.1)] text-[#fff] border-[1px] border-[rgba(208,208,208,.09)] py-[14px] pl-[18px] pr-[50px]"
                     placeholder="Search for products" />
